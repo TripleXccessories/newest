@@ -1,0 +1,149 @@
+{
+  "name": "UserProfile",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Reference to the User entity"
+    },
+    "full_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "beta_tester",
+        "free",
+        "retail",
+        "pro",
+        "institutional",
+        "admin"
+      ],
+      "default": "beta_tester"
+    },
+    "is_beta_mode": {
+      "type": "boolean",
+      "default": true
+    },
+    "trader_experience": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced",
+        "institutional"
+      ],
+      "default": "beginner"
+    },
+    "preferred_assets": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "equities",
+          "forex",
+          "crypto",
+          "commodities",
+          "options",
+          "futures"
+        ]
+      }
+    },
+    "how_heard": {
+      "type": "string",
+      "enum": [
+        "social_media",
+        "friend_referral",
+        "trading_community",
+        "other"
+      ]
+    },
+    "virtual_balance": {
+      "type": "number",
+      "default": 100000
+    },
+    "avatar_url": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "string"
+    },
+    "two_fa_enabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "email_verified": {
+      "type": "boolean",
+      "default": false
+    },
+    "subscription_tier": {
+      "type": "string",
+      "enum": [
+        "free",
+        "retail",
+        "pro",
+        "institutional",
+        "beta"
+      ],
+      "default": "beta"
+    },
+    "onboarding_complete": {
+      "type": "boolean",
+      "default": false
+    },
+    "last_login_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ARM Kill-Switch heartbeat"
+    },
+    "emergency_contact_email": {
+      "type": "string",
+      "description": "Emergency contact \u2014 also acts as default Benevolent Benefactor if no separate benefactor is designated"
+    },
+    "kill_switch_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "kill_switch_threshold_pct": {
+      "type": "number",
+      "default": 49
+    },
+    "kill_switch_salvage_pct": {
+      "type": "number",
+      "default": 55
+    },
+    "benefactor_name": {
+      "type": "string",
+      "description": "Full legal name of designated Benevolent Benefactor"
+    },
+    "benefactor_email": {
+      "type": "string",
+      "description": "Email address of designated Benevolent Benefactor"
+    },
+    "benefactor_phone": {
+      "type": "string",
+      "description": "Phone number of designated Benevolent Benefactor (optional)"
+    },
+    "benefactor_relationship": {
+      "type": "string",
+      "description": "Relationship of benefactor to the user (e.g. spouse, sibling, legal_representative)"
+    },
+    "benefactor_confirmed": {
+      "type": "boolean",
+      "default": false,
+      "description": "User has read and confirmed the Benevolent Benefactor Agreement"
+    },
+    "benefactor_updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of last benefactor form update \u2014 used for legal override precedence"
+    }
+  },
+  "required": [
+    "user_id",
+    "email"
+  ]
+}

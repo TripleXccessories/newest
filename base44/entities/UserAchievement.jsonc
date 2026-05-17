@@ -1,0 +1,53 @@
+{
+  "name": "UserAchievement",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "badge_id": {
+      "type": "string"
+    },
+    "badge_name": {
+      "type": "string"
+    },
+    "badge_emoji": {
+      "type": "string"
+    },
+    "badge_rarity": {
+      "type": "string",
+      "enum": [
+        "Bronze",
+        "Silver",
+        "Gold",
+        "Platinum",
+        "Diamond",
+        "Mythic"
+      ],
+      "default": "Bronze"
+    },
+    "badge_description": {
+      "type": "string"
+    },
+    "earned_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "is_public": {
+      "type": "boolean",
+      "default": true
+    },
+    "trigger_metric": {
+      "type": "string",
+      "description": "The metric that triggered this badge"
+    },
+    "trigger_value": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "user_id",
+    "badge_name",
+    "badge_emoji"
+  ]
+}

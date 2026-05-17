@@ -1,0 +1,85 @@
+{
+  "name": "CinematicScript",
+  "type": "object",
+  "properties": {
+    "arc_title": {
+      "type": "string",
+      "description": "Narrative arc title"
+    },
+    "act": {
+      "type": "number",
+      "enum": [
+        1,
+        2,
+        3
+      ],
+      "description": "Act number in the 3-act structure"
+    },
+    "sequence_name": {
+      "type": "string",
+      "description": "Sequence identifier (e.g. cold_open, bot_reveal, call_to_action)"
+    },
+    "start_time": {
+      "type": "number"
+    },
+    "end_time": {
+      "type": "number"
+    },
+    "tone": {
+      "type": "string",
+      "enum": [
+        "epic-mysterious",
+        "empowering",
+        "reverent",
+        "intense",
+        "hopeful"
+      ],
+      "default": "epic-mysterious"
+    },
+    "beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "visual",
+              "audio",
+              "narration",
+              "interactive"
+            ]
+          },
+          "desc": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "narration_text": {
+      "type": "string",
+      "description": "Full narration/voiceover text for this sequence"
+    },
+    "bot_persona_id": {
+      "type": "string",
+      "description": "Linked bot persona (for reveal sequences)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "compiled",
+        "exported"
+      ],
+      "default": "draft"
+    }
+  },
+  "required": [
+    "arc_title",
+    "sequence_name",
+    "act"
+  ]
+}

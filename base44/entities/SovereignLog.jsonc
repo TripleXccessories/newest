@@ -1,0 +1,69 @@
+{
+  "name": "SovereignLog",
+  "type": "object",
+  "properties": {
+    "actor_email": {
+      "type": "string",
+      "description": "Email of the user who performed the action"
+    },
+    "actor_role": {
+      "type": "string",
+      "description": "Role at time of action"
+    },
+    "action_type": {
+      "type": "string",
+      "enum": [
+        "delete_entity_record",
+        "bulk_delete",
+        "admin_grant",
+        "admin_revoke",
+        "sovereign_override",
+        "destructive_config_change",
+        "data_export",
+        "function_edit",
+        "access_attempt_blocked"
+      ],
+      "description": "Category of the action performed"
+    },
+    "target": {
+      "type": "string",
+      "description": "What entity/record/system was acted upon"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Written justification provided by the actor \u2014 required for all destructive actions"
+    },
+    "sovereignty_confirmed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the Sovereign (primary owner) confirmed this action"
+    },
+    "passphrase_hash": {
+      "type": "string",
+      "description": "Hashed confirmation passphrase used (never store plaintext)"
+    },
+    "ip_fingerprint": {
+      "type": "string",
+      "description": "Browser fingerprint / user agent at time of action"
+    },
+    "was_blocked": {
+      "type": "boolean",
+      "default": false,
+      "description": "Was this action blocked by the Sovereign Lock?"
+    },
+    "block_reason": {
+      "type": "string",
+      "description": "Why it was blocked, if applicable"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Any additional context about the action"
+    }
+  },
+  "required": [
+    "actor_email",
+    "action_type",
+    "target",
+    "reason"
+  ]
+}

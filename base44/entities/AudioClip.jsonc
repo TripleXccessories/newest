@@ -1,0 +1,46 @@
+{
+  "name": "AudioClip",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "text_content": {
+      "type": "string"
+    },
+    "audio_base64": {
+      "type": "string"
+    },
+    "persona_id": {
+      "type": "string"
+    },
+    "persona_name": {
+      "type": "string"
+    },
+    "persona_color": {
+      "type": "string"
+    },
+    "engine": {
+      "type": "string",
+      "enum": [
+        "elevenlabs",
+        "azure"
+      ],
+      "default": "elevenlabs"
+    },
+    "voice_id": {
+      "type": "string"
+    },
+    "duration_estimate": {
+      "type": "number"
+    },
+    "created_by": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "text_content",
+    "persona_id"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "name": "ModerationRecord",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "User who triggered moderation"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Email stored for permanent ban enforcement"
+    },
+    "violation_type": {
+      "type": "string",
+      "enum": [
+        "profanity",
+        "racism",
+        "discrimination"
+      ],
+      "description": "Type of violation"
+    },
+    "violation_text": {
+      "type": "string",
+      "description": "The exact text that triggered moderation (stored for strike 3 evidence)"
+    },
+    "strike_number": {
+      "type": "number",
+      "default": 1,
+      "description": "Which strike this is (1, 2, or 3)"
+    },
+    "suspension_level": {
+      "type": "string",
+      "enum": [
+        "warning",
+        "six_week_ban",
+        "six_month_ban",
+        "permanent_ban"
+      ],
+      "default": "warning"
+    },
+    "suspended_until": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When suspension ends (null for permanent)"
+    },
+    "is_permanently_banned": {
+      "type": "boolean",
+      "default": false
+    },
+    "assets_forfeited": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether account assets were transferred to IINT trust on permanent ban"
+    },
+    "source_input": {
+      "type": "string",
+      "enum": [
+        "help_bar",
+        "faq_search",
+        "other"
+      ],
+      "description": "Which input triggered the violation"
+    },
+    "reviewed_by_admin": {
+      "type": "boolean",
+      "default": false
+    },
+    "admin_notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_id",
+    "user_email",
+    "violation_type",
+    "violation_text",
+    "strike_number"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "name": "NarratedMessage",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "text_content": {
+      "type": "string",
+      "description": "The full message text for read-along"
+    },
+    "audio_url": {
+      "type": "string",
+      "description": "URL to generated audio file"
+    },
+    "audio_base64": {
+      "type": "string",
+      "description": "Base64 encoded audio (temp storage)"
+    },
+    "narrator_persona_id": {
+      "type": "string",
+      "description": "BotPersona ID of the narrator"
+    },
+    "narrator_name": {
+      "type": "string"
+    },
+    "narrator_archetype": {
+      "type": "string"
+    },
+    "narrator_color": {
+      "type": "string"
+    },
+    "task_type": {
+      "type": "string",
+      "enum": [
+        "quest",
+        "mission",
+        "decree",
+        "prophecy",
+        "ritual",
+        "summons"
+      ],
+      "default": "quest"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "is_completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "flagged_for_deletion": {
+      "type": "boolean",
+      "default": false
+    },
+    "assigned_to": {
+      "type": "string",
+      "description": "User email this task is for"
+    }
+  },
+  "required": [
+    "title",
+    "text_content",
+    "narrator_persona_id"
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "name": "SharedStrategy",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "author_name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "indicators": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "description": "Array of indicator configs from StrategyBuilder"
+    },
+    "logic": {
+      "type": "string",
+      "enum": [
+        "AND",
+        "OR"
+      ],
+      "default": "AND"
+    },
+    "ticker": {
+      "type": "string"
+    },
+    "period": {
+      "type": "string"
+    },
+    "roi_percent": {
+      "type": "number"
+    },
+    "win_rate": {
+      "type": "number"
+    },
+    "sharpe_ratio": {
+      "type": "number"
+    },
+    "max_drawdown_percent": {
+      "type": "number"
+    },
+    "total_trades": {
+      "type": "number"
+    },
+    "ratings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "description": "Array of { user_id, score (1-5) }"
+    },
+    "avg_rating": {
+      "type": "number",
+      "default": 0
+    },
+    "subscribers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of user_ids subscribed to this strategy"
+    },
+    "is_public": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "user_id",
+    "title",
+    "indicators"
+  ]
+}

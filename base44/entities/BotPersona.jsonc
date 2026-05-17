@@ -1,0 +1,257 @@
+{
+  "name": "BotPersona",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Character name (e.g. Da Feathered Sage)"
+    },
+    "code_id": {
+      "type": "string",
+      "description": "Character code (e.g. G-F-001)"
+    },
+    "role_title": {
+      "type": "string",
+      "description": "Character role/course title"
+    },
+    "archetype": {
+      "type": "string",
+      "enum": [
+        "Guide",
+        "Creator",
+        "Oracle",
+        "Challenger",
+        "Guardian",
+        "Catalyst"
+      ],
+      "description": "Bot archetype class"
+    },
+    "school": {
+      "type": "string",
+      "enum": [
+        "Foundations",
+        "Making",
+        "Analysis",
+        "Critical Inquiry",
+        "Stewardship",
+        "Transformation"
+      ],
+      "description": "School/Department this character belongs to"
+    },
+    "school_tagline": {
+      "type": "string",
+      "description": "School philosophy"
+    },
+    "presentation": {
+      "type": "string",
+      "enum": [
+        "female",
+        "male",
+        "non-binary"
+      ],
+      "description": "Character presentation"
+    },
+    "environment_name": {
+      "type": "string",
+      "description": "Classroom/environment name"
+    },
+    "environment_desc": {
+      "type": "string",
+      "description": "Full cinematic environment description"
+    },
+    "presence_beat": {
+      "type": "string",
+      "description": "Beat 2 - sign of the character before full reveal"
+    },
+    "reveal_desc": {
+      "type": "string",
+      "description": "Beat 3 - full character reveal description"
+    },
+    "demonstration_beat": {
+      "type": "string",
+      "description": "Beat 4 - wordless demonstration of expertise"
+    },
+    "signature_line": {
+      "type": "string",
+      "description": "Beat 5 - invitation quote spoken directly to the student"
+    },
+    "primary_color": {
+      "type": "string",
+      "description": "Hex color for character/school UI theming"
+    },
+    "secondary_color": {
+      "type": "string",
+      "description": "Hex secondary color"
+    },
+    "music_motif": {
+      "type": "string",
+      "description": "Musical motif description"
+    },
+    "art_direction": {
+      "type": "string",
+      "description": "Visual art direction notes"
+    },
+    "transition_style": {
+      "type": "string",
+      "enum": [
+        "blue_dissolve",
+        "gold_brushstroke",
+        "purple_crystal_shatter",
+        "red_slash",
+        "green_vine_grow",
+        "flame_sweep"
+      ],
+      "description": "Archetype-themed transition wipe style"
+    },
+    "entrance_style": {
+      "type": "string",
+      "enum": [
+        "particles",
+        "light_burst",
+        "shadow_emerge",
+        "code_materialize",
+        "energy_pulse",
+        "data_stream",
+        "fire_emerge",
+        "crystal_form",
+        "vine_rise",
+        "lightning_strike",
+        "stone_rise",
+        "glide_down"
+      ],
+      "description": "Cinematic entrance animation style"
+    },
+    "reveal_duration_seconds": {
+      "type": "number",
+      "default": 35,
+      "description": "Intended reveal scene duration in seconds"
+    },
+    "super_agent_active": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this bot has Super Agent capabilities enabled"
+    },
+    "texture_map": {
+      "type": "string",
+      "description": "Asset directory reference for bot visual texture"
+    },
+    "visual_aura": {
+      "type": "string",
+      "description": "Hex color for bot aura/glow effect in the rental room"
+    },
+    "rental_room_theme": {
+      "type": "string",
+      "enum": [
+        "Tactical Fortress",
+        "Holographic Void",
+        "Wisdom Hollow",
+        "Drafting Atrium",
+        "Convergence Lab",
+        "Argument Forge",
+        "War Room",
+        "Disruption Chamber",
+        "White Nexus",
+        "Archive Aerie",
+        "Refraction Chamber",
+        "Loom Studio",
+        "Workshop Foundry",
+        "Flux Lab",
+        "Watchtower Command",
+        "Council Circle",
+        "Armored Garden",
+        "The Crucible",
+        "Dynamo Hall",
+        "Cosmic Archive"
+      ],
+      "description": "CSS/environment theme to apply in the rental room UI"
+    },
+    "audio_ambience": {
+      "type": "string",
+      "description": "Audio ambience identifier for the rental room"
+    },
+    "ui_overlay": {
+      "type": "string",
+      "description": "HUD/overlay identifier for the rental room"
+    },
+    "default_greeting": {
+      "type": "string",
+      "description": "Bot's first words when user enters their rental room"
+    },
+    "rhyme_scripts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Headmaster riddle/rhyme scripts injected randomly in the Academy"
+    },
+    "teaser_used": {
+      "type": "boolean",
+      "default": false,
+      "description": "Has this character appeared in an easter egg / teaser"
+    },
+    "teaser_notes": {
+      "type": "string",
+      "description": "Notes on easter egg / commercial teaser usage"
+    },
+    "dialogue_intro": {
+      "type": "string",
+      "description": "Extended opening dialogue for onboarding/intro sequence"
+    },
+    "traits": {
+      "type": "object",
+      "properties": {
+        "openness": {
+          "type": "number"
+        },
+        "formality": {
+          "type": "number"
+        },
+        "empathy": {
+          "type": "number"
+        },
+        "directness": {
+          "type": "number"
+        },
+        "intensity": {
+          "type": "number"
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "draft",
+        "retired"
+      ],
+      "default": "draft"
+    },
+    "version": {
+      "type": "string",
+      "default": "1.0"
+    },
+    "personality_locked": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this character's personality traits are locked from editing"
+    },
+    "voice_locked": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this character's Azure voice assignment is locked"
+    },
+    "locked_voice_id": {
+      "type": "string",
+      "description": "Locked Azure Neural voice ID (e.g. en-US-AriaNeural)"
+    },
+    "locked_traits": {
+      "type": "object",
+      "description": "Snapshot of personality traits at time of lock"
+    }
+  },
+  "required": [
+    "name",
+    "archetype",
+    "school"
+  ]
+}

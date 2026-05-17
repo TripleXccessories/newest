@@ -1,0 +1,58 @@
+{
+  "name": "CollectibleNote",
+  "type": "object",
+  "properties": {
+    "lesson_id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string",
+      "description": "Key takeaway text"
+    },
+    "faculty_id": {
+      "type": "string"
+    },
+    "faculty_name": {
+      "type": "string"
+    },
+    "faculty_color": {
+      "type": "string"
+    },
+    "school_level": {
+      "type": "string"
+    },
+    "course_id": {
+      "type": "string"
+    },
+    "visual_prompt": {
+      "type": "string",
+      "description": "Concept visual watermark prompt"
+    },
+    "generated_image_url": {
+      "type": "string"
+    },
+    "rarity": {
+      "type": "string",
+      "enum": [
+        "Common",
+        "Uncommon",
+        "Rare",
+        "Epic",
+        "Legendary"
+      ],
+      "default": "Common"
+    }
+  },
+  "required": [
+    "lesson_id",
+    "user_id",
+    "title",
+    "content"
+  ]
+}

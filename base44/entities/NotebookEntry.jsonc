@@ -1,0 +1,37 @@
+{
+  "name": "NotebookEntry",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Optional note title"
+    },
+    "content": {
+      "type": "string",
+      "description": "Free-form note content"
+    },
+    "context": {
+      "type": "string",
+      "enum": [
+        "academy",
+        "trading",
+        "general"
+      ],
+      "default": "general",
+      "description": "Where this note was written"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pinned": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "content"
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "name": "ScopeFinding",
+  "type": "object",
+  "properties": {
+    "scope_id": {
+      "type": "string"
+    },
+    "scope_title": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "finding_type": {
+      "type": "string",
+      "enum": [
+        "bug",
+        "visual_glitch",
+        "performance_issue",
+        "audio_issue",
+        "crash",
+        "unexpected_behavior",
+        "easter_egg_hint",
+        "script_prompt",
+        "passed_no_issues",
+        "feature_suggestion"
+      ],
+      "default": "bug"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "steps_to_reproduce": {
+      "type": "string"
+    },
+    "device_type": {
+      "type": "string",
+      "enum": [
+        "mobile_ios",
+        "mobile_android",
+        "tablet_ios",
+        "tablet_android",
+        "desktop_windows",
+        "desktop_mac",
+        "desktop_linux",
+        "other"
+      ]
+    },
+    "device_model": {
+      "type": "string"
+    },
+    "os_version": {
+      "type": "string"
+    },
+    "browser": {
+      "type": "string",
+      "enum": [
+        "chrome",
+        "firefox",
+        "safari",
+        "edge",
+        "brave",
+        "opera",
+        "samsung_internet",
+        "other"
+      ]
+    },
+    "browser_version": {
+      "type": "string"
+    },
+    "screen_resolution": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "submitted",
+        "acknowledged",
+        "in_progress",
+        "fixed",
+        "wont_fix",
+        "duplicate",
+        "by_design"
+      ],
+      "default": "submitted"
+    },
+    "admin_notes": {
+      "type": "string"
+    },
+    "is_completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "importance_rating": {
+      "type": "number",
+      "default": 0,
+      "description": "Admin-assigned 1-10"
+    },
+    "contribution_score": {
+      "type": "number",
+      "default": 1
+    },
+    "auto_seed_to_scope": {
+      "type": "boolean",
+      "default": false,
+      "description": "Promote this finding into a new scope for other testers"
+    },
+    "screenshot_url": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "scope_id",
+    "finding_type",
+    "title",
+    "description",
+    "device_type",
+    "browser"
+  ]
+}

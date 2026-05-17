@@ -1,0 +1,62 @@
+{
+  "name": "StoreConfig",
+  "type": "object",
+  "properties": {
+    "config_key": {
+      "type": "string",
+      "description": "Unique key for this config record (e.g. 'main')"
+    },
+    "tip_jar_title": {
+      "type": "string",
+      "default": "Tips for Development & Cooler Features",
+      "description": "Label written on the tip jar"
+    },
+    "tip_jar_message": {
+      "type": "string",
+      "description": "Short message below the jar (holiday message, thank-you note, etc.)"
+    },
+    "tip_jar_paypal_url": {
+      "type": "string",
+      "description": "PayPal.me or PayPal donation link"
+    },
+    "tip_jar_qr_image_url": {
+      "type": "string",
+      "description": "URL to the QR code image for the tip jar"
+    },
+    "tip_presets": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "Preset tip amounts in USD (e.g. [2, 5, 10, 20])"
+    },
+    "specials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "price": {
+            "type": "string"
+          },
+          "badge": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Today's specials shown on the chalkboard sign"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "config_key"
+  ]
+}

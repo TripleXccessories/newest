@@ -1,0 +1,70 @@
+{
+  "name": "UserReward",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "ID of the user receiving the reward"
+    },
+    "reward_type": {
+      "type": "string",
+      "enum": [
+        "free_bot_rental",
+        "membership_override",
+        "discount_coupon",
+        "contest_prize",
+        "beta_bonus",
+        "admin_gift",
+        "other"
+      ],
+      "description": "Type of reward"
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable reward title e.g. Free Pro Bot Rental - 30 Days"
+    },
+    "description": {
+      "type": "string",
+      "description": "Full reward description shown to user"
+    },
+    "reward_details": {
+      "type": "object",
+      "description": "Structured details e.g. { bot_persona_id, duration_days } or { tier_name, valid_until }"
+    },
+    "granted_by_admin_id": {
+      "type": "string",
+      "description": "Admin who granted this reward"
+    },
+    "granted_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notification_message": {
+      "type": "string",
+      "description": "The notification message sent to the user e.g. You won 1st place! Your reward is now available."
+    },
+    "notification_sent": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_redeemed": {
+      "type": "boolean",
+      "default": false
+    },
+    "redeemed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Optional expiry for time-limited rewards"
+    }
+  },
+  "required": [
+    "user_id",
+    "reward_type",
+    "title",
+    "granted_by_admin_id"
+  ]
+}

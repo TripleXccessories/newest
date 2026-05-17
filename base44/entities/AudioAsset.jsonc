@@ -1,0 +1,85 @@
+{
+  "name": "AudioAsset",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "file_url": {
+      "type": "string"
+    },
+    "asset_type": {
+      "type": "string",
+      "enum": [
+        "music",
+        "sfx",
+        "beat_loop",
+        "one_shot",
+        "ambient",
+        "uploaded"
+      ],
+      "default": "uploaded"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "percussion",
+        "bass",
+        "melody",
+        "fx",
+        "ambient",
+        "vocal",
+        "custom"
+      ],
+      "default": "custom"
+    },
+    "duration_seconds": {
+      "type": "number"
+    },
+    "bpm": {
+      "type": "number"
+    },
+    "key": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "user_upload",
+        "freesound",
+        "pixabay",
+        "zapsplat",
+        "library"
+      ],
+      "default": "user_upload"
+    },
+    "license": {
+      "type": "string",
+      "default": "royalty_free"
+    },
+    "is_public": {
+      "type": "boolean",
+      "default": false
+    },
+    "waveform_data": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "Normalized waveform peaks for visualization"
+    }
+  },
+  "required": [
+    "name",
+    "asset_type"
+  ]
+}

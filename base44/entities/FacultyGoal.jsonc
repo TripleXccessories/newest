@@ -1,0 +1,63 @@
+{
+  "name": "FacultyGoal",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "faculty_id": {
+      "type": "string",
+      "description": "Code ID of the faculty character"
+    },
+    "faculty_name": {
+      "type": "string"
+    },
+    "goal_text": {
+      "type": "string",
+      "description": "The user's stated goal"
+    },
+    "sarcastic_response": {
+      "type": "string",
+      "description": "Faculty's cheeky/sarcastic reaction"
+    },
+    "challenge_accepted": {
+      "type": "boolean",
+      "default": false
+    },
+    "challenge_statement": {
+      "type": "string",
+      "description": "Faculty's formal challenge declaration"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "active",
+        "completed",
+        "abandoned"
+      ],
+      "default": "proposed"
+    },
+    "target_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "completed_early": {
+      "type": "boolean",
+      "default": false
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "progress_notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_id",
+    "faculty_id",
+    "faculty_name",
+    "goal_text"
+  ]
+}

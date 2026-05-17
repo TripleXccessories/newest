@@ -1,0 +1,31 @@
+{
+  "name": "Watchlist",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "default": "My Watchlist"
+    },
+    "tickers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_default": {
+      "type": "boolean",
+      "default": false
+    },
+    "color": {
+      "type": "string",
+      "default": "#00d4aa"
+    }
+  },
+  "required": [
+    "user_id",
+    "name"
+  ]
+}

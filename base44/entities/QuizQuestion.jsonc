@@ -1,0 +1,41 @@
+{
+  "name": "QuizQuestion",
+  "type": "object",
+  "properties": {
+    "lesson_id": {
+      "type": "string"
+    },
+    "question_number": {
+      "type": "number"
+    },
+    "question_text": {
+      "type": "string"
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "correct_answer_index": {
+      "type": "number",
+      "description": "0-based index of correct option"
+    },
+    "faculty_echo_correction": {
+      "type": "string",
+      "description": "Faculty's voice line when student gets it wrong"
+    },
+    "is_exam_question": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "lesson_id",
+    "question_number",
+    "question_text",
+    "options",
+    "correct_answer_index",
+    "faculty_echo_correction"
+  ]
+}

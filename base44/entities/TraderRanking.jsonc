@@ -1,0 +1,99 @@
+{
+  "name": "TraderRanking",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "avatar_initials": {
+      "type": "string"
+    },
+    "return_pct": {
+      "type": "number",
+      "default": 0
+    },
+    "win_rate": {
+      "type": "number",
+      "default": 0
+    },
+    "total_trades": {
+      "type": "number",
+      "default": 0
+    },
+    "total_pnl": {
+      "type": "number",
+      "default": 0
+    },
+    "max_drawdown_pct": {
+      "type": "number",
+      "default": 0
+    },
+    "sharpe_ratio": {
+      "type": "number",
+      "default": 0
+    },
+    "consecutive_profitable_days": {
+      "type": "number",
+      "default": 0
+    },
+    "lowest_drawdown_streak": {
+      "type": "number",
+      "default": 0
+    },
+    "rank": {
+      "type": "number",
+      "default": 0
+    },
+    "rank_tier": {
+      "type": "string",
+      "enum": [
+        "Bronze",
+        "Silver",
+        "Gold",
+        "Platinum",
+        "Diamond",
+        "Mythic"
+      ],
+      "default": "Bronze"
+    },
+    "badge_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "shared_strategy_id": {
+      "type": "string",
+      "description": "Active strategy shared for mirroring"
+    },
+    "mirror_enabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "mirror_count": {
+      "type": "number",
+      "default": 0,
+      "description": "How many users are mirroring this trader"
+    },
+    "period": {
+      "type": "string",
+      "enum": [
+        "all_time",
+        "monthly",
+        "weekly"
+      ],
+      "default": "all_time"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "user_id",
+    "display_name"
+  ]
+}

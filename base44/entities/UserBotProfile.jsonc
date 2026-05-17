@@ -1,0 +1,85 @@
+{
+  "name": "UserBotProfile",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "bot_persona_id": {
+      "type": "string",
+      "description": "Ref to BotPersona"
+    },
+    "bot_rental_id": {
+      "type": "string",
+      "description": "Ref to BotRental if rented"
+    },
+    "user_given_name": {
+      "type": "string",
+      "description": "Name the user gave this bot"
+    },
+    "call_me_as": {
+      "type": "string",
+      "description": "What this bot calls the user"
+    },
+    "is_active_rental": {
+      "type": "boolean",
+      "default": false
+    },
+    "path_chosen": {
+      "type": "string",
+      "enum": [
+        "oracle_path",
+        "challenger_path",
+        "guide_path",
+        "skipped"
+      ]
+    },
+    "interaction_count": {
+      "type": "number",
+      "default": 0
+    },
+    "notes": {
+      "type": "string"
+    },
+    "bot_kill_switch_enabled": {
+      "type": "boolean",
+      "default": true,
+      "description": "Per-bot kill switch \u2014 if true, monitor this bot's trades independently"
+    },
+    "bot_loss_threshold_pct": {
+      "type": "number",
+      "default": 20,
+      "description": "Max loss % before this bot's positions are autonomously closed (per-bot override)"
+    },
+    "bot_daily_loss_limit": {
+      "type": "number",
+      "default": 500,
+      "description": "Max daily $ loss allowed for this bot before kill switch fires"
+    },
+    "bot_max_open_positions": {
+      "type": "number",
+      "default": 5,
+      "description": "Max concurrent open positions this bot is allowed to hold"
+    },
+    "bot_kill_switch_triggered_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of last per-bot kill switch activation"
+    },
+    "bot_kill_switch_status": {
+      "type": "string",
+      "enum": [
+        "armed",
+        "triggered",
+        "reset",
+        "disabled"
+      ],
+      "default": "armed",
+      "description": "Current state of this bot's kill switch"
+    }
+  },
+  "required": [
+    "user_id",
+    "bot_persona_id"
+  ]
+}

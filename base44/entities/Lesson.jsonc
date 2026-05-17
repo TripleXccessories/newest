@@ -1,0 +1,85 @@
+{
+  "name": "Lesson",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "course_id": {
+      "type": "string",
+      "description": "Parent course slug e.g. trading-foundations"
+    },
+    "lesson_number": {
+      "type": "number"
+    },
+    "school_level": {
+      "type": "string",
+      "enum": [
+        "Kindergarten",
+        "Grade School",
+        "Mid Grade",
+        "Junior High",
+        "High School",
+        "University"
+      ],
+      "default": "Kindergarten"
+    },
+    "faculty_id": {
+      "type": "string"
+    },
+    "faculty_name": {
+      "type": "string"
+    },
+    "dialogue_script": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "speaker": {
+            "type": "string"
+          },
+          "line": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "intro",
+              "dialogue",
+              "transition",
+              "concept_visual",
+              "echo_correction"
+            ]
+          },
+          "visual_prompt": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "key_takeaway": {
+      "type": "string",
+      "description": "The collectible note / key lesson concept"
+    },
+    "mystery_thread_trigger": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_exam": {
+      "type": "boolean",
+      "default": false
+    },
+    "order_index": {
+      "type": "number",
+      "description": "Global sort order across all school levels"
+    }
+  },
+  "required": [
+    "title",
+    "course_id",
+    "lesson_number",
+    "school_level",
+    "faculty_id",
+    "faculty_name"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "name": "RhymeScript",
+  "type": "object",
+  "properties": {
+    "riddle": {
+      "type": "string",
+      "description": "The rhyming riddle/question posed to the user"
+    },
+    "answer": {
+      "type": "string",
+      "description": "The correct answer (case-insensitive match)"
+    },
+    "hint": {
+      "type": "string",
+      "description": "A subtle hint revealed after one wrong attempt"
+    },
+    "bot_name": {
+      "type": "string",
+      "description": "Which Faculty member delivers this riddle (e.g. Da PrEAChEr / Headmaster)"
+    },
+    "unlock_label": {
+      "type": "string",
+      "description": "Short label for what gets unlocked (e.g. 'RSI Deep-Dive', 'Options Flow Data')"
+    },
+    "unlock_content": {
+      "type": "string",
+      "description": "The market insight or deep-dive text revealed upon solving"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "default": "medium"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "foundations",
+        "technical",
+        "crypto",
+        "forex",
+        "options",
+        "risk",
+        "ai_neural",
+        "philosophy"
+      ],
+      "description": "Which course/domain this riddle belongs to"
+    },
+    "course_id": {
+      "type": "string",
+      "description": "Optional course ID to pin this riddle to a specific course"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "times_solved": {
+      "type": "number",
+      "default": 0,
+      "description": "Global counter of how many students solved this"
+    }
+  },
+  "required": [
+    "riddle",
+    "answer",
+    "unlock_label",
+    "unlock_content"
+  ]
+}

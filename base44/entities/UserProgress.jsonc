@@ -1,0 +1,117 @@
+{
+  "name": "UserProgress",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "current_school_level": {
+      "type": "string",
+      "enum": [
+        "Kindergarten",
+        "Grade School",
+        "Mid Grade",
+        "Junior High",
+        "High School",
+        "University"
+      ],
+      "default": "Kindergarten"
+    },
+    "current_course_id": {
+      "type": "string"
+    },
+    "current_lesson_id": {
+      "type": "string"
+    },
+    "completed_lesson_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "completed_course_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "earned_badge_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mystery_thread_progress": {
+      "type": "number",
+      "default": 0,
+      "description": "0-100"
+    },
+    "mystery_threads_found": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "total_notes_collected": {
+      "type": "number",
+      "default": 0
+    },
+    "graduation_hs_complete": {
+      "type": "boolean",
+      "default": false
+    },
+    "graduation_uni_complete": {
+      "type": "boolean",
+      "default": false
+    },
+    "last_activity_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "companion_save_credits": {
+      "type": "number",
+      "default": 0,
+      "description": "Remaining save credits. Each save or edit costs 1 credit."
+    },
+    "companion_slots_owned": {
+      "type": "number",
+      "default": 0,
+      "description": "Total character save slots purchased. Max 20."
+    },
+    "companion_slots_used": {
+      "type": "number",
+      "default": 0,
+      "description": "How many slots are currently occupied."
+    },
+    "first_free_companion_used": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the user has used their one free companion build (for career change course)."
+    },
+    "saved_companions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "slot_index": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "saved_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "config_snapshot": {
+            "type": "object"
+          }
+        }
+      },
+      "description": "Saved companion configurations per slot."
+    }
+  },
+  "required": [
+    "user_id"
+  ]
+}

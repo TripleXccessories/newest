@@ -1,0 +1,168 @@
+{
+  "name": "SceneScript",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Scene title"
+    },
+    "description": {
+      "type": "string"
+    },
+    "scene_type": {
+      "type": "string",
+      "enum": [
+        "intro",
+        "promotion",
+        "reward",
+        "tutorial",
+        "custom"
+      ],
+      "default": "custom"
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "robot",
+          "lightbulb"
+        ]
+      },
+      "description": "Characters used in this scene"
+    },
+    "script_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "time": {
+            "type": "number"
+          },
+          "character": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "value": {},
+          "duration": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "beat_track": {
+      "type": "object",
+      "description": "8-track beat machine state snapshot",
+      "properties": {
+        "bpm": {
+          "type": "number",
+          "default": 120
+        },
+        "tracks": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "audio_assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "music",
+              "sfx",
+              "beat",
+              "uploaded"
+            ]
+          }
+        }
+      }
+    },
+    "thumbnail_url": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "ready",
+        "published"
+      ],
+      "default": "draft"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dispatch_config": {
+      "type": "object",
+      "description": "Saved dispatch/notification settings",
+      "properties": {
+        "channels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tiers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "specific_emails": {
+          "type": "string"
+        },
+        "custom_message": {
+          "type": "string"
+        },
+        "promo_expires_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "academy_school_level": {
+      "type": "string",
+      "enum": [
+        "Kindergarten",
+        "Grade School",
+        "Mid Grade",
+        "Junior High",
+        "High School",
+        "University"
+      ],
+      "description": "Which school level this tutorial scene belongs to"
+    },
+    "academy_course_id": {
+      "type": "string",
+      "description": "Course slug this scene is attached to"
+    },
+    "academy_lesson_slot": {
+      "type": "string",
+      "description": "Where inside the lesson this scene plays (e.g. intro, after quiz)"
+    }
+  },
+  "required": [
+    "title",
+    "scene_type"
+  ]
+}

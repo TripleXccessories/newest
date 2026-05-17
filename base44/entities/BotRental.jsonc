@@ -1,0 +1,85 @@
+{
+  "name": "BotRental",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "bot_type": {
+      "type": "string",
+      "enum": [
+        "scalper",
+        "swing_trader",
+        "trend_follower",
+        "arbitrage",
+        "sentiment",
+        "ml_neural"
+      ]
+    },
+    "asset_classes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "monthly_price": {
+      "type": "number"
+    },
+    "performance_30d": {
+      "type": "number"
+    },
+    "win_rate": {
+      "type": "number"
+    },
+    "sharpe_ratio": {
+      "type": "number"
+    },
+    "max_drawdown": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "paused",
+        "maintenance"
+      ],
+      "default": "active"
+    },
+    "required_tier": {
+      "type": "string",
+      "enum": [
+        "free",
+        "retail",
+        "pro",
+        "institutional",
+        "beta"
+      ],
+      "default": "retail"
+    },
+    "rented_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of user_ids"
+    },
+    "thumbnail_url": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "bot_type",
+    "monthly_price"
+  ]
+}

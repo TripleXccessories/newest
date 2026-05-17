@@ -1,0 +1,75 @@
+{
+  "name": "TradeJournal",
+  "type": "object",
+  "properties": {
+    "trade_id": {
+      "type": "string",
+      "description": "Reference to Trade entity"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "ticker": {
+      "type": "string"
+    },
+    "trade_type": {
+      "type": "string"
+    },
+    "entry_price": {
+      "type": "number"
+    },
+    "pnl": {
+      "type": "number"
+    },
+    "pnl_percent": {
+      "type": "number"
+    },
+    "emotion": {
+      "type": "string",
+      "enum": [
+        "confident",
+        "anxious",
+        "greedy",
+        "disciplined",
+        "fearful",
+        "neutral",
+        "excited",
+        "frustrated"
+      ],
+      "description": "Emotional state during the trade"
+    },
+    "note": {
+      "type": "string",
+      "description": "User's free-form lesson or reflection"
+    },
+    "lesson_tag": {
+      "type": "string",
+      "enum": [
+        "patience",
+        "fomo",
+        "risk_management",
+        "entry_timing",
+        "exit_timing",
+        "position_sizing",
+        "emotional_control",
+        "market_reading",
+        "other"
+      ]
+    },
+    "notify_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "is_public": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "trade_id",
+    "user_id",
+    "ticker",
+    "emotion",
+    "note"
+  ]
+}

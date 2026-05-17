@@ -1,0 +1,70 @@
+{
+  "name": "PromoCode",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "The actual promo code string (e.g. SAVE20)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the promotion"
+    },
+    "discount_type": {
+      "type": "string",
+      "enum": [
+        "percentage",
+        "fixed_amount",
+        "free_trial",
+        "free_bot_rental",
+        "membership_override"
+      ],
+      "description": "Type of discount or reward"
+    },
+    "discount_value": {
+      "type": "number",
+      "description": "The value of the discount"
+    },
+    "applies_to_tier": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tier names this code applies to. Empty means all."
+    },
+    "valid_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "max_uses": {
+      "type": "number",
+      "description": "Max global uses. Null for unlimited."
+    },
+    "uses_count": {
+      "type": "number",
+      "default": 0
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "confirmation_message": {
+      "type": "string",
+      "description": "Custom message shown on redemption e.g. You have redeemed your free Bot Rental!"
+    },
+    "admin_notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "code",
+    "discount_type",
+    "discount_value",
+    "valid_from",
+    "valid_until"
+  ]
+}

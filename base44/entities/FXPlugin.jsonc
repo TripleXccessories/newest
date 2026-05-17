@@ -1,0 +1,60 @@
+{
+  "name": "FXPlugin",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "plugin_type": {
+      "type": "string",
+      "enum": [
+        "reverb",
+        "delay",
+        "chorus",
+        "distortion",
+        "eq",
+        "compressor",
+        "filter",
+        "pitch",
+        "custom"
+      ],
+      "default": "reverb"
+    },
+    "provider": {
+      "type": "string",
+      "description": "e.g. Freesound, ZapSplat, custom"
+    },
+    "provider_version": {
+      "type": "string"
+    },
+    "parameters": {
+      "type": "object",
+      "description": "Plugin-specific knob/slider parameters as key-value"
+    },
+    "audio_sample_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Royalty-free sample files bundled with this plugin"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "last_synced_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "icon_emoji": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "plugin_type"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "name": "MirrorTrade",
+  "type": "object",
+  "properties": {
+    "follower_user_id": {
+      "type": "string"
+    },
+    "leader_user_id": {
+      "type": "string"
+    },
+    "leader_display_name": {
+      "type": "string"
+    },
+    "original_trade_id": {
+      "type": "string"
+    },
+    "mirrored_trade_id": {
+      "type": "string"
+    },
+    "risk_allocation_pct": {
+      "type": "number",
+      "default": 10,
+      "description": "% of follower balance to allocate"
+    },
+    "ticker": {
+      "type": "string"
+    },
+    "trade_type": {
+      "type": "string"
+    },
+    "entry_price": {
+      "type": "number"
+    },
+    "mirrored_quantity": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "closed",
+        "paused"
+      ],
+      "default": "active"
+    },
+    "pnl": {
+      "type": "number",
+      "default": 0
+    },
+    "bot_suggestion": {
+      "type": "string",
+      "description": "Bot's risk assessment message"
+    }
+  },
+  "required": [
+    "follower_user_id",
+    "leader_user_id",
+    "ticker"
+  ]
+}

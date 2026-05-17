@@ -1,0 +1,77 @@
+{
+  "name": "BuildModule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Module name"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "base44_schema",
+        "bot_assets",
+        "cinematic",
+        "ui_pages",
+        "backend_functions",
+        "integrations"
+      ],
+      "description": "Module category per WS spec"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ready",
+        "incomplete",
+        "deprecated",
+        "new",
+        "in_progress"
+      ],
+      "default": "new"
+    },
+    "version": {
+      "type": "string",
+      "default": "1.0"
+    },
+    "depends_on": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Module IDs this depends on"
+    },
+    "ws_source": {
+      "type": "string",
+      "enum": [
+        "WS-1",
+        "WS-2",
+        "WS-3",
+        "WS-4"
+      ],
+      "description": "Which workstream defined this module"
+    },
+    "checklist_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "check": {
+            "type": "string"
+          },
+          "passed": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "ws_source"
+  ]
+}

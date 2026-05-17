@@ -1,0 +1,100 @@
+{
+  "name": "Scope",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "description": "Full task instructions for testers"
+    },
+    "acceptance_criteria": {
+      "type": "string",
+      "description": "What counts as passing this scope"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "paused",
+        "completed",
+        "archived"
+      ],
+      "default": "active"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "default": "medium"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "bug_hunt",
+        "ui_ux",
+        "performance",
+        "audio",
+        "feature_test",
+        "easter_egg",
+        "security",
+        "general"
+      ],
+      "default": "general"
+    },
+    "target_devices": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "mobile_ios",
+          "mobile_android",
+          "tablet",
+          "desktop_windows",
+          "desktop_mac",
+          "any"
+        ]
+      }
+    },
+    "target_browsers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "chrome",
+          "firefox",
+          "safari",
+          "edge",
+          "brave",
+          "opera",
+          "samsung_internet",
+          "any"
+        ]
+      }
+    },
+    "auto_seeded_from_finding_id": {
+      "type": "string",
+      "description": "If auto-created from a tester finding"
+    },
+    "created_by_admin": {
+      "type": "string"
+    },
+    "completion_count": {
+      "type": "number",
+      "default": 0
+    },
+    "importance_score": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "title",
+    "description"
+  ]
+}

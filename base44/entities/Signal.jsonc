@@ -1,0 +1,92 @@
+{
+  "name": "Signal",
+  "type": "object",
+  "properties": {
+    "ticker": {
+      "type": "string"
+    },
+    "asset_class": {
+      "type": "string",
+      "enum": [
+        "equities",
+        "forex",
+        "crypto",
+        "commodities",
+        "options",
+        "futures"
+      ]
+    },
+    "signal_type": {
+      "type": "string",
+      "enum": [
+        "buy",
+        "sell",
+        "hold",
+        "strong_buy",
+        "strong_sell"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "description": "0-100 confidence score"
+    },
+    "entry_price": {
+      "type": "number"
+    },
+    "target_price": {
+      "type": "number"
+    },
+    "stop_loss": {
+      "type": "number"
+    },
+    "timeframe": {
+      "type": "string",
+      "enum": [
+        "scalp",
+        "intraday",
+        "swing",
+        "position"
+      ]
+    },
+    "ai_reasoning": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "triggered",
+        "expired",
+        "cancelled"
+      ],
+      "default": "active"
+    },
+    "access_tier": {
+      "type": "string",
+      "enum": [
+        "free",
+        "retail",
+        "pro",
+        "institutional",
+        "beta"
+      ],
+      "default": "beta"
+    },
+    "win_probability": {
+      "type": "number"
+    },
+    "risk_reward": {
+      "type": "number"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "ticker",
+    "signal_type"
+  ]
+}

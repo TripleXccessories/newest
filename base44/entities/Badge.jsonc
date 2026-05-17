@@ -1,0 +1,63 @@
+{
+  "name": "Badge",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "icon_emoji": {
+      "type": "string"
+    },
+    "unlock_condition": {
+      "type": "string",
+      "description": "Human-readable unlock description"
+    },
+    "unlock_trigger": {
+      "type": "string",
+      "enum": [
+        "complete_kindergarten",
+        "complete_grade_school",
+        "complete_mid_grade",
+        "complete_junior_high",
+        "complete_high_school",
+        "complete_university",
+        "first_quiz_perfect",
+        "mystery_thread_found",
+        "all_notes_collected",
+        "custom"
+      ],
+      "description": "System trigger that awards this badge"
+    },
+    "school_level": {
+      "type": "string"
+    },
+    "rarity": {
+      "type": "string",
+      "enum": [
+        "Bronze",
+        "Silver",
+        "Gold",
+        "Platinum",
+        "Diamond",
+        "Mythic"
+      ],
+      "default": "Bronze"
+    },
+    "color": {
+      "type": "string",
+      "default": "#f59e0b"
+    },
+    "ceremony_line": {
+      "type": "string",
+      "description": "Text displayed during the badge ceremony scene"
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "unlock_trigger"
+  ]
+}
